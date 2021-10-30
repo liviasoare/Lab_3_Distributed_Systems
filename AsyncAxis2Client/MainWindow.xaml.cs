@@ -28,22 +28,34 @@ namespace AsyncAxis2Client
         private void BtnGetContent_Click(object sender, RoutedEventArgs e)
         {
             string fileName = txtFileName.Text;
-            lblBlocked.Content = "Searching and blocked";
+            lblBlocked.Content = "Searching and unblocked";
+            // lblBlocked.Content = "Searching and blocked";
+            txtFileContent.Text = "";
             try
             {
                 ServiceReference1.TextFileContentRetrieverPortTypeClient client =
                     new ServiceReference1.TextFileContentRetrieverPortTypeClient();
-                txtFileContent.Text = client.retrieveTextFileContent(fileName);
+                Task<ServiceReference1.retrieveTextFileContentResponse> response = client.retrieveTextFileContentAsync(fileName);
+                response.ContinueWith((t) => asyncMethodCompleted(t));
+                // txtFileContent.Text = client.retrieveTextFileContent(fileName);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
                 lblBlocked.Content = "";
             }
+            /*finally
+            {
+                lblBlocked.Content = "";
+            } */
 
+        }
+
+        public void asyncMethodCompleted(Task<ServiceReference1.retrieveTextFileContentResponse> task)
+        {
+            string result = task.Result.@return;
+            this.Dispatcher.Invoke(() =>
+            { txtFileContent.Text = result; lblBlocked.Content = ""; });
         }
 
         private void BtnDoSomething_Click(object sender, RoutedEventArgs e)
