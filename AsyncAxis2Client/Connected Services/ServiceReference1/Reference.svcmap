@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e9828b06-ff48-49d7-bebf-597758ddec87" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="44d9c2cc-88b5-48e8-a7f3-68e2337e8ea4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
-    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -22,7 +21,7 @@
     <MetadataSource Address="http://localhost:8080/TextFileServicesServer/services/TextFileContentRetriever?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TextFileContentRetriever.wsdl" MetadataType="Wsdl" ID="570c67de-a4cd-44be-9f73-6fde2372534c" SourceId="1" SourceUrl="http://localhost:8080/TextFileServicesServer/services/TextFileContentRetriever?wsdl" />
+    <MetadataFile FileName="TextFileContentRetriever.wsdl" MetadataType="Wsdl" ID="340c2122-718d-4506-9144-db1bad546af9" SourceId="1" SourceUrl="http://localhost:8080/TextFileServicesServer/services/TextFileContentRetriever?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

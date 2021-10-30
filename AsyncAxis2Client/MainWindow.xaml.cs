@@ -35,8 +35,11 @@ namespace AsyncAxis2Client
             {
                 ServiceReference1.TextFileContentRetrieverPortTypeClient client =
                     new ServiceReference1.TextFileContentRetrieverPortTypeClient();
-                Task<ServiceReference1.retrieveTextFileContentResponse> response = client.retrieveTextFileContentAsync(fileName);
-                response.ContinueWith((t) => asyncMethodCompleted(t));
+                client.retrieveTextFileContentCompleted += asyncMethodCompleted;
+                client.retrieveTextFileContentAsync(fileName);
+
+                /* Task<ServiceReference1.retrieveTextFileContentResponse> response = client.retrieveTextFileContentAsync(fileName);
+                response.ContinueWith((t) => asyncMethodCompleted(t)); */
                 // txtFileContent.Text = client.retrieveTextFileContent(fileName);
             }
             catch(Exception ex)
@@ -51,11 +54,17 @@ namespace AsyncAxis2Client
 
         }
 
-        public void asyncMethodCompleted(Task<ServiceReference1.retrieveTextFileContentResponse> task)
+        /* public void asyncMethodCompleted(Task<ServiceReference1.retrieveTextFileContentResponse> task)
         {
             string result = task.Result.@return;
             this.Dispatcher.Invoke(() =>
             { txtFileContent.Text = result; lblBlocked.Content = ""; });
+        } */
+
+            public void asyncMethodCompleted(object sender, ServiceReference1.retrieveTextFileContentCompletedEventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
+            { txtFileContent.Text = e.Result; lblBlocked.Content = ""; });
         }
 
         private void BtnDoSomething_Click(object sender, RoutedEventArgs e)
