@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://axis2server.services.com" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://axis2server.services.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2server.services.com">
+      <xs:element name="test">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="testResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveTextFileContent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveTextFileContentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="testRequest">
+    <wsdl:part name="parameters" element="ns:test" />
+  </wsdl:message>
+  <wsdl:message name="testResponse">
+    <wsdl:part name="parameters" element="ns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveTextFileContentRequest">
+    <wsdl:part name="parameters" element="ns:retrieveTextFileContent" />
+  </wsdl:message>
+  <wsdl:message name="retrieveTextFileContentResponse">
+    <wsdl:part name="parameters" element="ns:retrieveTextFileContentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TextFileContentRetrieverPortType">
+    <wsdl:operation name="test">
+      <wsdl:input wsaw:Action="urn:test" message="ns:testRequest" />
+      <wsdl:output wsaw:Action="urn:testResponse" message="ns:testResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveTextFileContent">
+      <wsdl:input wsaw:Action="urn:retrieveTextFileContent" message="ns:retrieveTextFileContentRequest" />
+      <wsdl:output wsaw:Action="urn:retrieveTextFileContentResponse" message="ns:retrieveTextFileContentResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TextFileContentRetrieverSoap11Binding" type="ns:TextFileContentRetrieverPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="urn:test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveTextFileContent">
+      <soap:operation soapAction="urn:retrieveTextFileContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TextFileContentRetrieverSoap12Binding" type="ns:TextFileContentRetrieverPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="urn:test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveTextFileContent">
+      <soap12:operation soapAction="urn:retrieveTextFileContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TextFileContentRetrieverHttpBinding" type="ns:TextFileContentRetrieverPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="test">
+      <http:operation location="test" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveTextFileContent">
+      <http:operation location="retrieveTextFileContent" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TextFileContentRetriever">
+    <wsdl:port name="TextFileContentRetrieverHttpSoap11Endpoint" binding="ns:TextFileContentRetrieverSoap11Binding">
+      <soap:address location="http://localhost:8080/TextFileServicesServer/services/TextFileContentRetriever.TextFileContentRetrieverHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="TextFileContentRetrieverHttpsSoap11Endpoint" binding="ns:TextFileContentRetrieverSoap11Binding">
+      <soap:address location="https://localhost:8443/TextFileServicesServer/services/TextFileContentRetriever.TextFileContentRetrieverHttpsSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="TextFileContentRetrieverHttpsSoap12Endpoint" binding="ns:TextFileContentRetrieverSoap12Binding">
+      <soap12:address location="https://localhost:8443/TextFileServicesServer/services/TextFileContentRetriever.TextFileContentRetrieverHttpsSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="TextFileContentRetrieverHttpSoap12Endpoint" binding="ns:TextFileContentRetrieverSoap12Binding">
+      <soap12:address location="http://localhost:8080/TextFileServicesServer/services/TextFileContentRetriever.TextFileContentRetrieverHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="TextFileContentRetrieverHttpsEndpoint" binding="ns:TextFileContentRetrieverHttpBinding">
+      <http:address location="https://localhost:8443/TextFileServicesServer/services/TextFileContentRetriever.TextFileContentRetrieverHttpsEndpoint/" />
+    </wsdl:port>
+    <wsdl:port name="TextFileContentRetrieverHttpEndpoint" binding="ns:TextFileContentRetrieverHttpBinding">
+      <http:address location="http://localhost:8080/TextFileServicesServer/services/TextFileContentRetriever.TextFileContentRetrieverHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

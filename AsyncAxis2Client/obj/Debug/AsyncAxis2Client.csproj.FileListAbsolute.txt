@@ -1,0 +1,15 @@
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\bin\Debug\AsyncAxis2Client.exe.config
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\bin\Debug\AsyncAxis2Client.exe
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\bin\Debug\AsyncAxis2Client.pdb
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.csprojAssemblyReference.cache
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\MainWindow.g.cs
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\App.g.cs
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client_MarkupCompile.cache
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client_MarkupCompile.lref
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\MainWindow.baml
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.g.resources
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.Properties.Resources.resources
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.csproj.GenerateResource.cache
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.exe
+C:\Users\ASUS\.NET_VisualCode\repos\AsyncAxis2Client\AsyncAxis2Client\obj\Debug\AsyncAxis2Client.pdb
